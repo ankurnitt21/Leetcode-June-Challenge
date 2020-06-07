@@ -8,3 +8,4 @@
 | 3 | Two City Scheduling | Sorting | O(nlogn) | O(1) |
 | 4 | Reverse String | NA | O(n) | O(1) |
 | 5 | Random pick with weight | Binary Search | O(n) | O(n) |
+| 6 | Queue Reconstruction by height | Sorting using comparator | O(nlogn) | O(n) |
