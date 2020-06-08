@@ -1,0 +1,45 @@
+class Solution {
+public:
+    int **makeTable(int n,int sum)
+    {
+        int **t=new int*[n];
+        for(int i=0;i<n;i++)
+        {
+            t[i]=new int[sum];
+            for(int j=0;j<sum;j++)
+            t[i][j]=-1;
+        }
+        return t;
+    }
+    
+    int rec(vector<int> coins,int sum,int n,int **t)
+    {
+        if(n<0)
+            return 0;
+        if(sum==0)
+            return 1;
+        
+        if(t[n][sum]!=-1)
+            return t[n][sum];
+        int incl=0;
+        if(coins[n]<=sum)
+        {
+            incl=rec(coins,sum-coins[n],n,t);
+        }
+        int excl=rec(coins,sum,n-1,t);
+        
+        return t[n][sum]=incl+excl;
+    }
+    
+    int change(int amount, vector<int>& coins) {
+        if(amount==0 && coins.size()==0)
+            return 1;
+        if(coins.size()==0)
+            return 0;
+        
+        int **t=makeTable(coins.size()+1,amount+1);
+        
+        return rec(coins,amount,coins.size()-1,t);
+        
+    }
+};
