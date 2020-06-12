@@ -13,3 +13,5 @@
 | 8 | Power of 2 | Brute force | O(n) | O(1) |
 | 9 | is Subsequence | Memoization | O(n^2) | O(n^2) |
 | 10 | Search insert position | Bianry search | O(nlogn) | O(1) |
+| 11 | sort 0,1,2 | NA | O(n) | O(1) |
+| 12 | Insert Delete GetRandom in O(1) | Hashmap | O(1) | O(n) |
